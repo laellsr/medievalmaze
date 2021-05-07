@@ -2,7 +2,7 @@ import pygame
 import glob
 
 class Player():
-	def __init__(self, x, y, width, height, color):
+	def __init__(self, x, y, width, height):
 		self.images = {"UP": [pygame.image.load(img) for img in glob.glob(f"assets/warrior1/{'u_'}*.png")], "DOWN":[pygame.image.load(img) for img in glob.glob(f"assets/warrior1/{'d_'}*.png")], "LEFT": [pygame.image.load(img) for img in glob.glob(f"assets/warrior1/{'l_'}*.png")], "RIGHT": [pygame.image.load(img) for img in glob.glob(f"assets/warrior1/{'r_'}*.png")] }	
 		self.direction = 'DOWN'
 		self.index = 0
@@ -15,8 +15,8 @@ class Player():
 		self.rect = pygame.Rect(self.x, self.y, width, height)
 		self.vel = 3
 
-	def draw(self, win):
-		win.blit(self.image, (self.x, self.y))
+	def draw(self, window):
+		window.blit(self.image, (self.x, self.y))
 
 	def move(self):
 		keys = pygame.key.get_pressed()

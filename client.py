@@ -3,8 +3,8 @@ from player import Player
 from network import Network
 
 
-def redrawWindow(window, player, player2, player3, player4):
-    window.fill((255,255,255))
+def redrawWindow(window, background, player, player2, player3, player4):
+    window.blit(background, (0,0))
     player.draw(window)
     player2.draw(window)
     player3.draw(window)
@@ -13,16 +13,20 @@ def redrawWindow(window, player, player2, player3, player4):
 
 
 def main():
-    width = 500
+    width = 800
     height = 500
+    sprite_width = 50
+    sprite_height = 50
     window = pygame.display.set_mode((width, height))
-    pygame.display.set_caption("Medieval Race v0.5")
+    background = pygame.image.load("assets/background/background_1.png")
+    background = pygame.transform.scale(background, (3840//4,2160//4))
+    pygame.display.set_caption(" Medieval Maze v1 ")
     network = Network()
     start_position = network.get_position()
-    player = Player(start_position[0],start_position[1],100,100)
-    player2 = Player(100,0,100,100)
-    player3 = Player(200,0,100,100)
-    player4 = Player(300,0,100,100)
+    player = Player(start_position[0],start_position[1],sprite_width,sprite_height)
+    player2 = Player(100,0,sprite_width,sprite_height)
+    player3 = Player(200,0,sprite_width,sprite_height)
+    player4 = Player(300,0,sprite_width,sprite_height)
     clock = pygame.time.Clock()
 
     run = True
@@ -40,6 +44,6 @@ def main():
         		run = False
         		pygame.quit()
         player.move()
-        redrawWindow(window, player, player2, player3, player4)
+        redrawWindow(window, background, player, player2, player3, player4)
     pygame.quit()
 main()

@@ -11,7 +11,7 @@ except socket.error as error:
     str(error)
 
 server.listen(4)
-print("Welcome to Medieval Race Server!")
+print("Welcome to Medieval Maze Server!")
 print("Waiting for a connection...")
 
 position = [(0,0),(100,0),(200,0),(300,0)]

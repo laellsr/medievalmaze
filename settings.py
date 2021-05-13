@@ -1,11 +1,11 @@
 # game settings
-WIDTH, HEIGHT = 800, 500 
+WIDTH, HEIGHT = 960, 540 
 FPS = 60
 TITLE = "Medieval Maze v1"
-TILESIZE = 50
+TILESIZE = 16
 
 # player settings
-PLAYER_WIDTH, PLAYER_HEIGHT = 50, 50
+PLAYER_WIDTH, PLAYER_HEIGHT = 55, 66
 
 # wall settings
 GREEN = (0, 255, 0)

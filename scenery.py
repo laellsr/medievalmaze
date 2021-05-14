@@ -27,6 +27,10 @@ class Tile(pygame.sprite.Sprite):
     def draw(self, window):
         window.blit(self.image, (self.rect.x, self.rect.y))
 
+class Limit(Tile):
+    def __init__(self, x, y):
+        super().__init__(x, y)
+
 class Stone(Tile):
     def __init__(self, x, y):
         super().__init__(x, y)
@@ -34,6 +38,7 @@ class Stone(Tile):
         self.image = pygame.transform.scale(self.image, (30,30))
         self.image.set_alpha(255)
 
-class Limit(Tile):
+class Final(Tile):
     def __init__(self, x, y):
         super().__init__(x, y)
+        self.image.set_alpha(255)

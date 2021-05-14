@@ -48,6 +48,7 @@ def main():
 	player3 = Player(200,0,PLAYER_WIDTH,PLAYER_HEIGHT)
 	player4 = Player(300,0,PLAYER_WIDTH,PLAYER_HEIGHT)
 	clock = pygame.time.Clock()
+	final_tiles = pygame.sprite.Group()
 	map_tiles = pygame.sprite.Group()
 	for row, tiles in enumerate(game_map.data):
 		for col, tile in enumerate(tiles):
@@ -55,7 +56,9 @@ def main():
 				map_tiles.add(Limit(col, row))
 			elif tile == '1':
 				map_tiles.add(Stone(col, row))
-
+			elif tile == 'F':
+				final_tiles.add(Final(col, row))
+	
 	run = True
 	while run:
 		clock.tick(FPS)
@@ -66,19 +69,22 @@ def main():
 		player3.update()
 		player4.x , player4.y = players_data[2]
 		player4.update()
+		
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				run = False
 				pygame.quit()
 		player.move(map_tiles)
+		
+		for tile in final_tiles:
+			if player.rect.colliderect(tile):
+				win_or_lose = pygame.font.SysFont(None, 60, True)
+				game_over_message = "Congratulations, you win!"
+				while True:
+					window.blit(background, (0,0))
+					window.blit(win_or_lose.render(game_over_message, 1, pygame.Color("white")), (160, 250))
+					pygame.display.update()
+			
 		redrawWindow(window, background, map_tiles, font, clock, player, player2, player3, player4)
-		# player.move(map_tiles)
-		# window.blit(background, (0,0))
-		# player.draw(window)
-		# pygame.draw.rect(window, (255,255,255), player.rect, 1)
-		# for tile in map_tiles:
-		# 	tile.draw(window)
-		# pygame.display.update()
-
 	pygame.quit()
 main()

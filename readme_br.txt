@@ -38,9 +38,9 @@ Para rodar o jogo e testar o multiplayer, é necessário abrir 5 terminais.
 Inicialize o servidor no primeiro terminal com
 > python server.py
 
-Nos últimos quatro restantes use
+No restante use
 > python client.py
 
-Atenção: aguarde o cliente ser carregado até executar o próximo comando.
+Atenção: aguarde o cliente ser carregado para executar o próximo. Pode ocorrer travamento caso execute todos de uma vez.
 
 Este processo precisa ser reiniciado a cada final de partida ou a cada desconexão do cliente. Ao final da partida, o servidor precisa obrigatoriamente ser reiniciado.

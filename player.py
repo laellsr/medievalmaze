@@ -11,9 +11,7 @@ class Player(pygame.sprite.Sprite):
 		self.y = y
 		self.width = width
 		self.height = height
-		# self.rect = self.image.get_rect(center = (width//2, height//5))
-		# self.rect = self.image.get_rect(midbottom=(20,20))
-		self.rect = pygame.Rect(self.x, self.y, 16, 6)
+		self.rect = pygame.Rect(self.x, self.y, 16, 6) #custom rect
 		self.vel = 3
 		self.index_vel = 0.15
 

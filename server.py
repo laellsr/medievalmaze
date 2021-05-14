@@ -1,7 +1,7 @@
 import socket, pickle
 from _thread import *
 
-address = ("localhost", 7777)
+address = ("localhost", 61111)
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -14,7 +14,7 @@ server.listen(4)
 print("Welcome to Medieval Maze Server!")
 print("Waiting for a connection...")
 
-position = [(0,0),(100,0),(200,0),(300,0)]
+position = [(25,300),(25,320),(25,340),(25,360)]
 
 def threaded_client(conn, player):
     conn.send(pickle.dumps(position[player]))

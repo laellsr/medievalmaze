@@ -29,7 +29,7 @@ def redrawWindow(window, background, map_tiles, font, clock, player, player2, pl
 	set_color_mask(player2, GREEN)
 	player2.draw(window)
 	player.draw(window)
-	pygame.draw.rect(window, (255,255,255), player.rect, 1)
+	# pygame.draw.rect(window, (255,255,255), player.rect, 1) # dev
 	window.blit(fps(font,clock), (5, 527))
 	pygame.display.update()
 

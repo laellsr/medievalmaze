@@ -1,4 +1,4 @@
-import pygame,glob, sys
+import pygame, glob
 from settings import *
 class Player(pygame.sprite.Sprite):
 	def __init__(self, x, y, width, height):

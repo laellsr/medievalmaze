@@ -1,46 +1,20 @@
 # Medieval Maze v1
-
-## Requerimentos
-
-#### Python 3.x
-
-Para rodar a aplicação é necessário poder executar Python 3 em seu sistema operacional.
-
-#### Pygame
-
-Pygame é uma aplicação Python que facilita a construção de jogos. Para obtê-la é nessário instalar gerenciador de pacotes **pip**. Geralmente, ele já está na instação com python.
-
-Para Ubuntu e derivados
-> apt-get install python-pip
-
-Para Unix/macOS
-> python get-pip.py
-
-Para Windows
-> py get-pip.py --no-index --find-links=/local/copies
-
-
-No caso de dúvidas acesse a documentação pip
-https://pip.pypa.io/en/stable/installing/
-
-
-Para instalar o Pygame use
-> python -m pip install -U pygame
-
-Em caso de dúvidas
-https://www.pygame.org/wiki/GettingStarted
-
-
-## O jogo
-
-Para rodar o jogo e testar o multiplayer, é necessário abrir 5 terminais.
-
-Inicialize o servidor no primeiro terminal com
+Medieval Maze is a multiplayer game 
+for up to 4 players and the objective is to solve the maze. The project was made in python 3 using pygame library, threads and sockets.
+## Requisites
+Python 3.x and pygame.
+## Instructions
+You need to run the server first
 > python server.py
 
-Nos últimos quatro restantes use
+Then you can execute the client up to four times
 > python client.py
 
-**Atenção**: aguarde o cliente ser carregado até executar o próximo cliente.
+#### Important 
 
-o servidor precisa ser reiniciado a cada final de partida ou a cada desconexão do cliente.
+- Wait for the client to load before executing the next
+
+- The server needs to be restarted whenever the match ends or a player is disconnected
+
+## Screenshot
+![screenshot1](assets/screenshots/screenshot1.jpeg)

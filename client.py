@@ -1,4 +1,4 @@
-import pygame, sys
+import pygame
 from scenery import *
 from player import Player
 from network import Network

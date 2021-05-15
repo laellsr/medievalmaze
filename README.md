@@ -16,5 +16,8 @@ Then you can execute the client up to four times
 
 - The server needs to be restarted whenever the match ends or a player is disconnected
 
-## Screenshot
+## Screenshots
 ![screenshot1](assets/screenshots/screenshot1.jpeg)
+![screenshot4](assets/screenshots/screenshot4.jpg)
+![screenshot2](assets/screenshots/screenshot2.jpg)
+![screenshot3](assets/screenshots/screenshot3.jpg)

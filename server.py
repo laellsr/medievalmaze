@@ -14,7 +14,7 @@ server.listen(4)
 print("Welcome to Medieval Maze Server!")
 print("Waiting for a connection...")
 
-position = [(25,300),(25,320),(25,340),(25,360)]
+position = [(63,200),(48,200),(63,190),(48,190)]
 
 def threaded_client(conn, player):
     conn.send(pickle.dumps(position[player]))

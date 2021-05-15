@@ -2,7 +2,7 @@
 WIDTH, HEIGHT = 960, 540 
 FPS = 60
 TITLE = "Medieval Maze v1"
-TILESIZE = 24
+TILESIZE = 20
 
 # player settings
 PLAYER_WIDTH, PLAYER_HEIGHT = 55, 66

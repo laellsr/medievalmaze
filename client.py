@@ -7,7 +7,7 @@ from settings import *
 def fps(font, clock):
 	fr = "FPS: " + str(int(clock.get_fps()))
 	fr += " | You: Knight, P2: Green Knight, P3: Red Knight, P4: Blue Knight"
-	frt = font.render(fr, 1, pygame.Color("yellow"))
+	frt = font.render(fr, 1, pygame.Color("black"))
 	return frt
 
 def set_color_mask(player, color):
@@ -56,6 +56,16 @@ def main():
 				map_tiles.add(Limit(col, row))
 			elif tile == '1':
 				map_tiles.add(Stone(col, row))
+			elif tile == 'G':
+				map_tiles.add(Greenery(col, row))
+			elif tile == 'P':
+				map_tiles.add(Plaque(col, row))
+			elif tile == 'B':
+				map_tiles.add(Barrel(col, row))
+			elif tile == 'S':
+				map_tiles.add(Statue(col, row))
+			elif tile == 'E':
+				map_tiles.add(Goblin(col, row))
 			elif tile == 'F':
 				final_tiles.add(Final(col, row))
 	

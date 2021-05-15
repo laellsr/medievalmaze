@@ -11,7 +11,7 @@ class Player(pygame.sprite.Sprite):
 		self.y = y
 		self.width = width
 		self.height = height
-		self.rect = pygame.Rect(self.x, self.y, 16, 6) #custom rect
+		self.rect = pygame.Rect(self.x, self.y, 16, 10) #custom rect
 		self.vel = 3
 		self.index_vel = 0.15
 
@@ -65,5 +65,5 @@ class Player(pygame.sprite.Sprite):
 			self.index = 0
 		self.image = self.images[self.direction][int(self.index)]
 		self.image = pygame.transform.scale(self.image, (PLAYER_WIDTH,PLAYER_HEIGHT))
-		self.rect.x = self.x +20
-		self.rect.y = self.y +59
+		self.rect.x = self.x + 20
+		self.rect.y = self.y + 59

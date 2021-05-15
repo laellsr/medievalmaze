@@ -41,6 +41,6 @@ Inicialize o servidor no primeiro terminal com
 Nos últimos quatro restantes use
 > python client.py
 
-Atenção: aguarde o cliente ser carregado até executar o próximo comando.
+**Atenção**: aguarde o cliente ser carregado até executar o próximo cliente.
 
-Este processo precisa ser reiniciado a cada final de partida ou a cada desconexão do cliente. Ao final da partida, o servidor precisa obrigatoriamente ser reiniciado.
+o servidor precisa ser reiniciado a cada final de partida ou a cada desconexão do cliente.

@@ -61,7 +61,7 @@ def main():
 	pygame.init()
 	font = pygame.font.SysFont(None, 16, True)
 	window = pygame.display.set_mode((WIDTH, HEIGHT))
-	background = pygame.image.load("MedievalMaze/assets/background/background_1.png")
+	background = pygame.image.load(os.path.join(PATH_TO_ASSETS, "background/background_1.png"))
 	background = pygame.transform.scale(background, (3840//4,2160//4))
 	pygame.display.set_caption(TITLE)
 
@@ -70,6 +70,8 @@ def main():
 
 	game_level = 0
 	mazes = get_levels(MAX_MAPS)
+	for maze in mazes:
+		maze.maze[0][1] = 0
 	gameMap = Map(mazes[game_level])
 	map_tiles, final_tiles = mapTiles(gameMap)
 	

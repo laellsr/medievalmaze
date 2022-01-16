@@ -68,6 +68,7 @@ def main():
 	gameMap = Map(mazes[game_level])
 	map_tiles, final_tiles = mapTiles(gameMap)
 	
+	update_map = False
 	run = True
 	while run:
 		clock.tick(FPS)
@@ -81,6 +82,7 @@ def main():
 		for tile in final_tiles:
 			if player.rect.colliderect(tile):
 				game_level += 1
+				update_map = True
 				if game_level == MAX_MAPS:
 					win_or_lose = pygame.font.SysFont(None, 60, True)
 					game_over_message = "Congratulations, you win!"
@@ -88,10 +90,14 @@ def main():
 						window.blit(background, (0,0))
 						window.blit(win_or_lose.render(game_over_message, 1, pygame.Color("white")), (160, 250))
 						pygame.display.update()
-				gameMap = Map(mazes[game_level])
-				map_tiles, final_tiles = mapTiles(gameMap)
 				player.x, player.y = X_INITIAL, Y_INITIAL
 		
+		if update_map:
+			update_map = False
+			gameMap = Map(mazes[game_level])
+			map_tiles, final_tiles = mapTiles(gameMap)
+
+
 		redrawWindow(window, background, map_tiles, font, clock, player, game_level+1)
 	pygame.quit()
 main()

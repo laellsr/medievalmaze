@@ -1,3 +1,6 @@
+# file dir settings
+PATH_TO_ASSETS = 'MedievalMaze/assets/'
+
 # game settings
 WIDTH, HEIGHT = 960, 540 
 FPS = 60

@@ -5,16 +5,20 @@ llsr@ic.ufal.br
 """
 
 import pygame
-from scenery import *
-from player import Player
-from network import Network
-from settings import *
+from MedievalMaze.scenery import *
+from MedievalMaze.player import Player
+from MedievalMaze.network import Network
+from MedievalMaze.settings import *
 
-from GeneticAlgorithm import run
+# ! Removed some local stored functions to remote
 
-def get_levels(quantity: int = 2, step: int = 2):
-   max_gen = quantity * step
-   return run(100, 10, max_gen, 0.1, shape=(12, 48), quantity=quantity)
+# from GeneticAlgorithm import run
+
+# def get_levels(quantity: int = 2, step: int = 2):
+#    max_gen = quantity * step
+#    return run(100, 10, max_gen, 0.1, shape=(12, 48), quantity=quantity)
+
+from MazeGeneration.MainFunction import get_levels
 
 def fps(font, clock, level):
 	txt = "FPS: " + str(int(clock.get_fps()))
@@ -44,7 +48,8 @@ def mapTiles(gameMap):
 	line_size = len(gameMap.data[0])
 	for row, tiles in enumerate(gameMap.data):
 		for col, tile in enumerate(tiles):
-			if (tile == 1) or (col == 0 and tile != 3) or (col == line_size-1 and tile != -1 and tile != 3):
+			# if (tile == 1) or (col == 0 and tile != 3) or (col == line_size-1 and tile != -1 and tile != 3):
+			if (tile == 1):
 				map_tiles.add(Stone(col, row))
 			elif tile == 3:
 				map_tiles.add(Limit(col, row))
@@ -56,7 +61,7 @@ def main():
 	pygame.init()
 	font = pygame.font.SysFont(None, 16, True)
 	window = pygame.display.set_mode((WIDTH, HEIGHT))
-	background = pygame.image.load("assets/background/background_1.png")
+	background = pygame.image.load("MedievalMaze/assets/background/background_1.png")
 	background = pygame.transform.scale(background, (3840//4,2160//4))
 	pygame.display.set_caption(TITLE)
 

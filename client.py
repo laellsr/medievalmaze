@@ -43,7 +43,7 @@ def main():
 	font = pygame.font.SysFont(None, 16, True)
 	window = pygame.display.set_mode((WIDTH, HEIGHT))
 	game_map = Map()
-	background = pygame.image.load("assets/background/background_1.png")
+	background = pygame.image.load("MedievalMaze/assets/background/background_1.png")
 	background = pygame.transform.scale(background, (3840//4,2160//4))
 	pygame.display.set_caption(TITLE)
 	network = Network()

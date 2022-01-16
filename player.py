@@ -1,8 +1,8 @@
 import pygame, glob
-from settings import *
+from MedievalMaze.settings import *
 class Player(pygame.sprite.Sprite):
 	def __init__(self, x, y, width, height):
-		self.images = {"UP": [pygame.image.load(img) for img in glob.glob(f"assets/warrior1/{'cu_'}*.png")], "DOWN":[pygame.image.load(img) for img in glob.glob(f"assets/warrior1/{'cd_'}*.png")], "LEFT": [pygame.image.load(img) for img in glob.glob(f"assets/warrior1/{'cl_'}*.png")], "RIGHT": [pygame.image.load(img) for img in glob.glob(f"assets/warrior1/{'cr_'}*.png")] }	
+		self.images = {"UP": [pygame.image.load(img) for img in glob.glob(f"MedievalMaze/assets/warrior1/{'cu_'}*.png")], "DOWN":[pygame.image.load(img) for img in glob.glob(f"MedievalMaze/assets/warrior1/{'cd_'}*.png")], "LEFT": [pygame.image.load(img) for img in glob.glob(f"MedievalMaze/assets/warrior1/{'cl_'}*.png")], "RIGHT": [pygame.image.load(img) for img in glob.glob(f"MedievalMaze/assets/warrior1/{'cr_'}*.png")] }	
 		self.direction = 'DOWN'
 		self.index = 0
 		self.image = self.images[self.direction][int(self.index)]

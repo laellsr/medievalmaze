@@ -2,11 +2,24 @@ import pygame
 from settings import *
 
 class Map:
-    def __init__(self):
+    def __init__(self, maze):
+
         self.data = []
-        with open("settings/map.txt", 'rt') as file:
-            for line in file:
-                self.data.append(line.strip())
+
+        limit_line = [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]
+        walk_line = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        
+        for i in range(0, 10):
+            self.data.append(limit_line)
+
+        # for maze in mazes:
+        #     for line in maze:
+        #         self.data.append(line)
+
+        for line in maze:
+            self.data.append(line)
+
+        self.data.append(limit_line)
 
         self.tile_width = len(self.data[0])
         self.tile_height = len(self.data)
